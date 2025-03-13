@@ -20,7 +20,7 @@ export const AddPost = () => {
   const [text, setText] = useState('');
   const [title, setTitle] = useState('');
   const [tags, setTags] =useState('');
-  const [imageUrl, setImageUrl] = useState([]); 
+  const [imageUrl, setImageUrl] = useState(''); 
   const inputFileRef = React.useRef(null);
 
   const isEditing = Boolean(id);
@@ -101,6 +101,7 @@ export const AddPost = () => {
     [],
   );
 
+
   if (!window.localStorage.getItem('token') && !isAuth) {
           return <Navigate to="/" />
         }
@@ -110,22 +111,21 @@ export const AddPost = () => {
       <Button onClick={() => inputFileRef.current.click()} variant="outlined" size="large">
         Загрузить превью
       </Button>
-      <input ref={inputFileRef} type="file" multiple onChange={handleChangeFile} hidden  />
+      <input ref={inputFileRef} type="file" single onChange={handleChangeFile} hidden  />
       <Button variant="contained" color="error" onClick={onClickRemoveImage}>
           Удалить
         </Button>
-      {imageUrl.length > 0 && (
+      {imageUrl && (
         <>
         
         <img 
         className={styles.image} 
-        src={`http://localhost:4444${imageUrl}`} 
+        src={`${process.env.REACT_APP_API_URL}${imageUrl}`} 
         // alt="Uploaded"
         style={{ width: "100%", height: "500px", objectFit: "contain", borderRadius: "8px" }} 
         />
         </>
       ) 
-      // : null
       }
       <br />
       <br />

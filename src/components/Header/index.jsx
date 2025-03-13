@@ -1,11 +1,13 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import Button from '@mui/material/Button';
-import styles from './Header.module.scss';
-import Container from '@mui/material/Container';
 import {useDispatch, useSelector} from 'react-redux';
+
+import styles from './Header.module.scss';
+
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+
 import { fetchAuth, logout, selectIsAuth } from '../../redux/slices/auth';
-import { Info } from '@mui/icons-material';
 
 export const Header = () => {
   const isAuth = useSelector(selectIsAuth);  
@@ -41,10 +43,10 @@ export const Header = () => {
               
               <>
                 <Link to="/login">
-                  <Button variant="outlined">Войти</Button>
+                  <Button variant="contained" color='secondary' size='small'>Войти</Button>
                 </Link>
                 <Link to="/register">
-                  <Button variant="contained">Создать аккаунт</Button>
+                  <Button variant="contained" size='large'>Создать аккаунт</Button>
                 </Link>
               </>
             )}

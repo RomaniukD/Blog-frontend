@@ -34,7 +34,7 @@ export const Home = () => {
   ? filteredPosts
   : [...filteredPosts].sort((a,b) => b.viewsCount - a.viewsCount);
 
-
+console.log(posts.items)
   return (
     <>
       <Tabs style={{ marginBottom: 15 }} value={tab ? 0 : 1} aria-label="basic tabs example">
@@ -62,7 +62,7 @@ export const Home = () => {
                   key={obj._id}
                   id={obj._id}
                   title={obj.title}
-                  imageUrl={obj.imageUrl ? `http://localhost:4444${obj.imageUrl}` : ""}
+                  imageUrl={obj.imageUrl ? `${process.env.REACT_APP_API_URL}${obj.imageUrl}` : ""}
                   user={userData}
                   createdAt={obj.createdAt}
                   viewsCount={obj.viewsCount}
