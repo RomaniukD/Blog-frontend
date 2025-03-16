@@ -15,11 +15,6 @@ export const Registration = () => {
   const isAuth = useSelector(selectIsAuth);
   const dispatch = useDispatch();
   const {register, handleSubmit, formState: {errors, isValid}} = useForm({
-    defaultValues: {
-      fullName: 'Jan Kowalski',
-      email: 'jankowalski@gmail.com',
-      password: '12345'
-    },
     mode: 'onChange'
   })
 
