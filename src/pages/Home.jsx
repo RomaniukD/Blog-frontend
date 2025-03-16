@@ -34,7 +34,6 @@ export const Home = () => {
   ? filteredPosts
   : [...filteredPosts].sort((a,b) => b.viewsCount - a.viewsCount);
 
-console.log(posts.items)
   return (
     <>
       <Tabs style={{ marginBottom: 15 }} value={tab ? 0 : 1} aria-label="basic tabs example">

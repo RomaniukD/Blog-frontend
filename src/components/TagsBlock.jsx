@@ -11,12 +11,10 @@ import { SideBlock } from "./SideBlock";
 import {useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 
-// [...new Set(items)]
 
 export const TagsBlock = ({ items, isLoading = true }) => {
   const navigate = useNavigate();
   const uniqueItems = [...new Set(items.map(item => item.toLowerCase()))];
-console.log(uniqueItems);
   return (
     <SideBlock title="Filter by tags">
       <List>

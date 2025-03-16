@@ -47,8 +47,7 @@ export const Index = ({ postId, userId, onCommentAdded }) => {
     }
   };
 
-  console.log("userId", userId);
-  
+
   return (
     <div className={styles.root}>
       <Avatar
