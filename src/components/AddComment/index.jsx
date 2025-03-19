@@ -21,7 +21,7 @@ export const Index = ({ postId, userId, onCommentAdded }) => {
 
   const handleSubmit = async () => {
     if (comment.trim() === "") {
-      alert("Коментар не може бути порожнім");
+      alert("The comment cannot be empty");
       return;
     }
     
@@ -38,10 +38,10 @@ export const Index = ({ postId, userId, onCommentAdded }) => {
         setComment(""); 
         onCommentAdded(response.data);
       } else {
-        throw new Error("Невідомий статус відповіді");
+        throw new Error("Unknown response status");
       }
     } catch (err) {
-      console.warn("Помилка запиту:", err.response?.data || err.message);
+      console.warn("Request error:", err.response?.data || err.message);
     } finally {
       setLoading(false);
     }
@@ -52,11 +52,11 @@ export const Index = ({ postId, userId, onCommentAdded }) => {
     <div className={styles.root}>
       <Avatar
         classes={{ root: styles.avatar }}
-        src={user.avatarUrl}
+        src={user.avatarUrl || ""}
       />
       <div className={styles.form}>
         <TextField
-          label="Додати коментар"
+          label="Add a comment"
           variant="outlined"
           maxRows={10}
           multiline
@@ -69,7 +69,7 @@ export const Index = ({ postId, userId, onCommentAdded }) => {
           variant="contained" 
           disabled={loading}
         >
-          {loading ? "Відправка..." : "Відправити"}
+          {loading ? "Sending..." : "Send"}
         </Button>
       </div>
     </div>

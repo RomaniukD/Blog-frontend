@@ -12,7 +12,7 @@ import Skeleton from "@mui/material/Skeleton";
 
 export const CommentsBlock = ({items, isLoading = true}) => {
   return (
-    <SideBlock title="Коментарі">
+    <SideBlock title="Comments">
       <List>
         {(isLoading ? [...Array(5)] : items.comments).map((obj, index) => (
           <React.Fragment key={obj?._id || index}>

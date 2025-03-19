@@ -22,7 +22,7 @@ export const Registration = () => {
       const data = await dispatch(fetchRegister(values));
   
       if (!data.payload) {
-        return alert('Не вдось зареєструватись!')
+        return alert('Don`t be late to register!')
       }
   
       if ('token' in data.payload) {
@@ -37,7 +37,7 @@ export const Registration = () => {
   return (
     <Paper classes={{ root: styles.root }}>
       <Typography classes={{ root: styles.title }} variant="h5">
-        Создание аккаунта
+        Account creation
       </Typography>
       <div className={styles.avatar}>
         <Avatar sx={{ width: 100, height: 100 }} />
@@ -47,16 +47,16 @@ export const Registration = () => {
       <TextField
       error={Boolean(errors.fullName?.message)}
       helperText={errors.fullName?.message}
-      {...register('fullName', {required: 'Вкажіть повне ім`я' })} 
+      {...register('fullName', {required: 'Enter your full name' })} 
       className={styles.field} 
-      label="Полное имя" 
+      label="Full Name" 
       fullWidth
       />
       <TextField
       error={Boolean(errors.email?.message)}
       helperText={errors.email?.message}
       type='email'
-      {...register('email', {required: 'Вкажіть пошту'})} 
+      {...register('email', {required: 'Enter the mail'})} 
       className={styles.field} 
       label="E-Mail" 
       fullWidth
@@ -65,13 +65,13 @@ export const Registration = () => {
       error={Boolean(errors.password?.message)}
       helperText={errors.password?.message}
       type="password"
-      {...register('password', {required: 'Вкажіть пароль'})} 
+      {...register('password', {required: 'Enter the password'})} 
       className={styles.field} 
-      label="Пароль" 
+      label="Password" 
       fullWidth
       />
       <Button disabled={!isValid} type='submit' size="large" variant="contained" fullWidth>
-        Зарегистрироваться
+      Register
       </Button>
       </form>
     </Paper>

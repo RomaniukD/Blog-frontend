@@ -14,7 +14,7 @@ export const Header = () => {
   const dispatch = useDispatch();
   
   const onClickLogout = () => {
-    if(window.confirm('Ви напевно хочете вийти?')) {
+    if(window.confirm('Are you sure you want to leave?')) {
       dispatch(logout());
       window.localStorage.removeItem('token');
     }
@@ -32,10 +32,10 @@ export const Header = () => {
             {isAuth ? (
               <>
                 <Link to="/add-post">
-                  <Button variant="contained">Написать статью</Button>
+                  <Button variant="contained">Write an article</Button>
                 </Link>
                 <Button onClick={onClickLogout} variant="contained" color="error">
-                  Выйти
+                Get out
                 </Button>
               </>
             ) : (
@@ -43,10 +43,10 @@ export const Header = () => {
               
               <>
                 <Link to="/login">
-                  <Button variant="contained" color='secondary' size='small'>Войти</Button>
+                  <Button variant="contained" color='secondary' size='small'>Sign in</Button>
                 </Link>
                 <Link to="/register">
-                  <Button variant="contained" size='large'>Создать аккаунт</Button>
+                  <Button variant="contained" size='large'>Create an account</Button>
                 </Link>
               </>
             )}

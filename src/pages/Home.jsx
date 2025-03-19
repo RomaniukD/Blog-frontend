@@ -37,8 +37,8 @@ export const Home = () => {
   return (
     <>
       <Tabs style={{ marginBottom: 15 }} value={tab ? 0 : 1} aria-label="basic tabs example">
-        <Tab onClick={() => setTab(true)} label="Новые" />
-        <Tab onClick={() => setTab(false)} label="Популярные" />
+        <Tab onClick={() => setTab(true)} label="New" />
+        <Tab onClick={() => setTab(false)} label="Popular" />
       </Tabs>
   
       <Grid container spacing={4}>

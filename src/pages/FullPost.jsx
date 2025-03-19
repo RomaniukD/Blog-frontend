@@ -13,9 +13,6 @@ export const FullPost = ({postId}) => {
   const [userId, setUserId] = React.useState();
   const [isLoading, setLoading] = React.useState(true);
   const {id} = useParams(); 
-  // const userData = useSelector((state) => state.auth.data);
-  
-  // const [comments, setComments] = useState([]);
 
   useEffect(() => {
     axios
@@ -26,7 +23,7 @@ export const FullPost = ({postId}) => {
     })
     .catch((err) => {
       console.warn('FullPost.jsx', err);
-      alert("Помилка при отриманні статті з сервера")
+      alert("Error when receiving an article from the server")
     });
   }, []);
   
@@ -67,7 +64,6 @@ export const FullPost = ({postId}) => {
         postId={data._id} 
         userId={userId} 
         isLoading={isLoading} 
-        // onCommentAdded={handleCommentAdded}
         /> 
     </>
   );
