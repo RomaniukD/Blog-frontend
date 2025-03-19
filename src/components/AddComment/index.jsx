@@ -52,7 +52,7 @@ export const Index = ({ postId, userId, onCommentAdded }) => {
     <div className={styles.root}>
       <Avatar
         classes={{ root: styles.avatar }}
-        src={user.avatarUrl || ""}
+        src={user?.avatarUrl || ""}
       />
       <div className={styles.form}>
         <TextField
