@@ -111,7 +111,28 @@ export const AddPost = () => {
       <Button onClick={() => inputFileRef.current.click()} variant="outlined" size="large">
       Download preview
       </Button>
+      
       <input ref={inputFileRef} type="file" single onChange={handleChangeFile} hidden  />
+      {imageUrl && (
+        <Button variant="contained" color="error" onClick={onClickRemoveImage}>
+          Удалить
+        </Button>
+      )}
+      {imageUrl && (
+        <>
+        
+        <img 
+        className={styles.image} 
+        src={`${process.env.REACT_APP_API_URL}${imageUrl}`} 
+        // alt="Uploaded"
+        style={{ width: "100%", height: "500px", objectFit: "contain", borderRadius: "8px" }} 
+        />
+        </>
+      ) 
+      }
+
+
+      {/* <input ref={inputFileRef} type="file" single onChange={handleChangeFile} hidden  />
       <Button variant="contained" color="error" onClick={onClickRemoveImage}>
       Delete
         </Button>
@@ -126,7 +147,7 @@ export const AddPost = () => {
         />
         </>
       ) 
-      }
+      } */}
       <br />
       <br />
       <TextField

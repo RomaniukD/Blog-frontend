@@ -7,7 +7,7 @@ export const fetchComments = createAsyncThunk("comments/fetchComments",
       const { data } = await axios.get(`/posts/${postId}/comments`);
       return data; 
     } catch (error) {
-      return rejectWithValue(error.response?.data || "Ошибка загрузки комментариев");
+      return rejectWithValue(error.response?.data || "Error loading comments");
     }
   }
 );
