@@ -115,7 +115,7 @@ export const AddPost = () => {
       <input ref={inputFileRef} type="file" single onChange={handleChangeFile} hidden  />
       {imageUrl && (
         <Button variant="contained" color="error" onClick={onClickRemoveImage}>
-          Удалить
+          Delete
         </Button>
       )}
       {imageUrl && (
@@ -124,30 +124,11 @@ export const AddPost = () => {
         <img 
         className={styles.image} 
         src={`${process.env.REACT_APP_API_URL}${imageUrl}`} 
-        // alt="Uploaded"
         style={{ width: "100%", height: "500px", objectFit: "contain", borderRadius: "8px" }} 
         />
         </>
       ) 
       }
-
-
-      {/* <input ref={inputFileRef} type="file" single onChange={handleChangeFile} hidden  />
-      <Button variant="contained" color="error" onClick={onClickRemoveImage}>
-      Delete
-        </Button>
-      {imageUrl && (
-        <>
-        
-        <img 
-        className={styles.image} 
-        src={`${process.env.REACT_APP_API_URL}${imageUrl}`} 
-        // alt="Uploaded"
-        style={{ width: "100%", height: "500px", objectFit: "contain", borderRadius: "8px" }} 
-        />
-        </>
-      ) 
-      } */}
       <br />
       <br />
       <TextField
@@ -171,7 +152,7 @@ export const AddPost = () => {
           {isEditing ? 'Change' : 'Publish'}
         </Button>
         <a href="/">
-          <Button size="large">Cancellation</Button>
+          <Button size="large">Сancel</Button>
         </a>
       </div>
     </Paper>
