@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import {useSelector} from 'react-redux';
+import useState, { useEffect } from "react";
 import {useParams} from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import axios from '../axios';
@@ -9,9 +8,9 @@ import { Index } from "../components/AddComment";
 import { CommentsBlock } from "../components/CommentsBlock";
 
 export const FullPost = ({postId}) => {
-  const [data, setData] = React.useState();
-  const [userId, setUserId] = React.useState();
-  const [isLoading, setLoading] = React.useState(true);
+  const [data, setData] = useState();
+  const [userId, setUserId] = useState();
+  const [isLoading, setLoading] = useState(true);
   const {id} = useParams(); 
 
   useEffect(() => {

@@ -34,6 +34,7 @@ export const Post = ({
   if (isLoading) {
     return <PostSkeleton />;
   }
+  console.log('post skelet', PostSkeleton);
 
   const onClickRemove = () => {
     if(window.confirm('Are you sure you want to delete the article?')) {
